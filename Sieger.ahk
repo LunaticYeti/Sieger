@@ -1,6 +1,7 @@
 ﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+Menu, Tray, Add, Launch Rainbow Six Siege, SiegeLabel
 DetectHiddenWindows, On
 Script_Hwnd := WinExist("ahk_class AutoHotkey ahk_pid " DllCall("GetCurrentProcessId"))
 DetectHiddenWindows, Off
@@ -23,3 +24,6 @@ ShellEvent(wParam, lParam) {
         WinActivate, ahk_id %active_id%
     }
 }
+
+SiegeLabel:
+	Run, cmd /c start steam://rungameid/359550
